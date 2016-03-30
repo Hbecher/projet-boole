@@ -10,6 +10,13 @@ public interface Composant
 	public int numero_composant();
 
 	/**
+	 * chaîne de caractères identifiant le type du composant
+	 *
+	 * @return le type du composant, sous forme textuelle
+	 */
+	public String type_composant();
+
+	/**
 	 * nb de sortie du composant
 	 *
 	 * @return nb de sortie du composant

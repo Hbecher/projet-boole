@@ -17,6 +17,12 @@ public class Itr extends Generateur
 	}
 
 	@Override
+	public String type_composant()
+	{
+		return null;
+	}
+
+	@Override
 	public int nb_sortie()
 	{
 		return 0;
