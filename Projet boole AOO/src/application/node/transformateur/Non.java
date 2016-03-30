@@ -4,6 +4,7 @@ import application.node.Transformateur;
 
 public class Non extends Transformateur
 {
+	private int numero_composant;
 	@Override
 	public boolean teste()
 	{
@@ -13,24 +14,24 @@ public class Non extends Transformateur
 	@Override
 	public int numero_composant()
 	{
-		return 0;
+		return numero_composant;
 	}
 
 	@Override
 	public String type_composant()
 	{
-		return null;
+		return "Non";
 	}
 
 	@Override
 	public int nb_sortie()
 	{
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int nb_entree()
 	{
-		return 0;
+		return 1;
 	}
 }
