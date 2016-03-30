@@ -17,6 +17,12 @@ public class Et extends Transformateur
 	}
 
 	@Override
+	public String type_composant()
+	{
+		return null;
+	}
+
+	@Override
 	public int nb_sortie()
 	{
 		return 0;
