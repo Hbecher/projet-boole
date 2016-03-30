@@ -4,6 +4,8 @@ import application.node.Generateur;
 
 public class Gnd extends Generateur
 {
+	private int numero_composant;
+
 	@Override
 	public boolean teste()
 	{
@@ -13,13 +15,13 @@ public class Gnd extends Generateur
 	@Override
 	public int numero_composant()
 	{
-		return 0;
+		return numero_composant;
 	}
 
 	@Override
 	public String type_composant()
 	{
-		return null;
+		return "Gnd";
 	}
 
 	@Override
@@ -31,6 +33,6 @@ public class Gnd extends Generateur
 	@Override
 	public int nb_entree()
 	{
-		return 0;
+		return 1;
 	}
 }

@@ -4,6 +4,8 @@ import application.node.Recepteur;
 
 public class Led extends Recepteur
 {
+	private int numero_composant;
+
 	@Override
 	public boolean teste()
 	{
@@ -13,13 +15,13 @@ public class Led extends Recepteur
 	@Override
 	public int numero_composant()
 	{
-		return 0;
+		return numero_composant;
 	}
 
 	@Override
 	public String type_composant()
 	{
-		return null;
+		return "Led";
 	}
 
 	@Override
@@ -31,6 +33,6 @@ public class Led extends Recepteur
 	@Override
 	public int nb_entree()
 	{
-		return 0;
+		return 1;
 	}
 }

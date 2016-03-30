@@ -4,6 +4,8 @@ import application.node.Generateur;
 
 public class Vcc extends Generateur
 {
+	private int numero_composant;
+
 	@Override
 	public boolean teste()
 	{
@@ -13,19 +15,19 @@ public class Vcc extends Generateur
 	@Override
 	public int numero_composant()
 	{
-		return 0;
+		return numero_composant;
 	}
 
 	@Override
 	public String type_composant()
 	{
-		return null;
+		return "Vcc";
 	}
 
 	@Override
 	public int nb_sortie()
 	{
-		return 0;
+		return 1;
 	}
 
 	@Override
