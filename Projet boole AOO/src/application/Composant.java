@@ -29,4 +29,27 @@ public interface Composant
 	 * @return nb d'entrées du composant
 	 */
 	public int nb_entree();
+	
+	//en test 6 avril
+	/**
+	 * entrées du composant
+	 *
+	 * @return entrée du composant
+	 */
+	public int entree(int numero_port, int nouvel_etat);
+	
+	/**
+	 * sorties du composant
+	 *
+	 * @return sortie du composant
+	 */
+	public int sortie(int numero_port);
+	
+	/**
+	 * sorties du composant
+	 *
+	 * @return sortie du composant
+	 */
+	public int etat();
+	//fin en test 6 avril
 }

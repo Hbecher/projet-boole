@@ -35,4 +35,11 @@ public class Gnd extends Generateur
 	{
 		return 1;
 	}
+	
+	//en test 6 avril
+	public int sortie()
+	{
+		return 0;
+	}
+	//fin en test 6 avril
 }

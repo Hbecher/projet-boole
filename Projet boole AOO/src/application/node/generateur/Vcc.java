@@ -35,4 +35,11 @@ public class Vcc extends Generateur
 	{
 		return 0;
 	}
+	
+	//en test 6 avril
+	public int sortie()
+	{
+		return 1;
+	}
+	//fin en test 6 avril
 }
