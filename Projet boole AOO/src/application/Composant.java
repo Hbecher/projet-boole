@@ -2,6 +2,9 @@ package application;
 
 public interface Composant
 {
+	
+	
+	
 	/**
 	 * numÃ©ro d'indentifiaction du composant
 	 *
@@ -31,25 +34,30 @@ public interface Composant
 	public int nb_entree();
 	
 	//en test 6 avril
-	/**
-	 * entrÃ©es du composant
-	 *
-	 * @return entrÃ©e du composant
-	 */
-	public int entree(int numero_port, int nouvel_etat);
 	
 	/**
-	 * sorties du composant
+	 * etat du composant
 	 *
-	 * @return sortie du composant
-	 */
-	public int sortie(int numero_port);
-	
-	/**
-	 * sorties du composant
-	 *
-	 * @return sortie du composant
+	 * @return etat du composant
 	 */
 	public int etat();
+	
+	/**
+	 * changer l'état du composant
+	 *
+	 * @return rien
+	 */
+	public void changeretat(int nouvel_etat);
 	//fin en test 6 avril
+	
+	
+	/**
+	 * donne le résultats du calcul effectué par le composant
+	 *
+	 * @return résultat
+	 */
+	public boolean sortie();	
+	
+	
+	
 }

@@ -1,10 +1,10 @@
 package application.node.transformateur;
-
 import application.node.Transformateur;
 
 public class Non extends Transformateur
 {
 	private int numero_composant;
+	
 	@Override
 	public boolean teste()
 	{
@@ -33,5 +33,11 @@ public class Non extends Transformateur
 	public int nb_entree()
 	{
 		return 1;
+	}
+
+	@Override
+	public boolean sortie() {
+		// TODO Auto-generated method stub
+		return !entree.get(0);
 	}
 }

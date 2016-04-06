@@ -5,7 +5,7 @@ import application.node.Transformateur;
 public class Et extends Transformateur
 {
 	private int numero_composant;
-
+	
 	@Override
 	public boolean teste()
 	{
@@ -35,4 +35,12 @@ public class Et extends Transformateur
 	{
 		return 2;
 	}
+
+	@Override
+	public boolean sortie() {
+		
+		// TODO Auto-generated method stub
+		return entree.get(0) && entree.get(1);
+	}
+
 }

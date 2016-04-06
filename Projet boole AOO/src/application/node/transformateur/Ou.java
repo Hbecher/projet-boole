@@ -35,4 +35,12 @@ public class Ou extends Transformateur
 	{
 		return 2;
 	}
+
+	@Override
+	public boolean sortie() {
+		// TODO Auto-generated method stub
+		return entree.get(0) || entree.get(1);
+	}
+
+
 }

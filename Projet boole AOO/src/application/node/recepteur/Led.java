@@ -6,8 +6,6 @@ public class Led extends Recepteur
 {
 	private int numero_composant;
 	//en test 6 avril
-	private int etat;
-	//fin en test 6 avril
 
 	@Override
 	public boolean teste()
