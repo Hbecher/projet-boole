@@ -12,12 +12,12 @@ public class Recepteur implements Porte{
 		this.type=type;
 	}
 
-	public void Entrée1(boolean e1){
+	public void Entree1(boolean e1){
 		e=e1;
 		this.Operation();	
 	}
 	
-	public void Entrée2(boolean e1){
+	public void Entree2(boolean e1){
 		e=e1;
 		this.Operation();	
 	}

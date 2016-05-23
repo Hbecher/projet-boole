@@ -38,8 +38,8 @@ public class Generateur implements Porte{
 			mode="Bas";
 		}
 		if(b!=s){
-		if(i==1) porte.Entrée1(s);
-		if(i==2) porte.Entrée2(s);
+		if(i==1) porte.Entree1(s);
+		if(i==2) porte.Entree2(s);
 		}
 	}
 
@@ -53,13 +53,13 @@ public class Generateur implements Porte{
 	}
 
 	@Override
-	public void Entrée1(boolean e) {
+	public void Entree1(boolean e) {
 		// TODO Auto-generated method stub
 		System.out.println("Erreur: Entrée dans un générateur");
 	}
 
 	@Override
-	public void Entrée2(boolean e) {
+	public void Entree2(boolean e) {
 		System.out.println("Erreur: Entrée dans un générateur");
 		// TODO Auto-generated method stub
 		

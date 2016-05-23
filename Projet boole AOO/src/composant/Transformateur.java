@@ -13,12 +13,12 @@ public class Transformateur implements Porte {
 		this.type=type;
 	}
 
-	public void Entrée1(boolean e){
+	public void Entree1(boolean e){
 		e1=e;
 		this.Operation();	
 	}
 
-	public void Entrée2(boolean e){
+	public void Entree2(boolean e){
 		e2=e;
 		this.Operation();
 	}
@@ -31,8 +31,8 @@ public class Transformateur implements Porte {
 		if(type.equals("Et")) s=(e1&&e2);
 		if(type.equals("Ou")) s=(e1||e2);
 		if(b!=s){
-		if(i==1) porte.Entrée1(s);
-		if(i==2) porte.Entrée2(s);
+		if(i==1) porte.Entree1(s);
+		if(i==2) porte.Entree2(s);
 		}
 	}
 
@@ -52,12 +52,12 @@ public class Transformateur implements Porte {
 		i=n; 
 	}
 
-	public void niveauEntrée1(){
+	public void niveauEntree1(){
 		System.out.println("Etat de l'entrée 1 de la porte "+nom+" : "+e1);	
 		
 	}
 	
-	public void niveauEntrée2(){
+	public void niveauEntree2(){
 		System.out.println("Etat de l'entrée 2 de la porte "+nom+" : "+e2);	
 
 	}
