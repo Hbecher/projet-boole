@@ -49,19 +49,24 @@ public class Generateur implements Porte{
 	}
 	
 	public void mode(){
-		System.out.println("Mode de la sortie du générateur "+nom+" : "+s);
+		System.out.println("Mode de la sortie du gï¿½nï¿½rateur "+nom+" : "+s);
 	}
 
 	@Override
 	public void Entree1(boolean e) {
 		// TODO Auto-generated method stub
-		System.out.println("Erreur: Entrée dans un générateur");
+		System.out.println("Erreur: Entrï¿½e dans un gï¿½nï¿½rateur");
 	}
 
 	@Override
 	public void Entree2(boolean e) {
-		System.out.println("Erreur: Entrée dans un générateur");
+		System.out.println("Erreur: Entrï¿½e dans un gï¿½nï¿½rateur");
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public boolean Sortie(){
+		return s;
 		
 	}
 

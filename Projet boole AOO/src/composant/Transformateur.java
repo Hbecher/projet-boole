@@ -38,11 +38,11 @@ public class Transformateur implements Porte {
 
 	public void niveau(){
 		if(type.equals("Non")){
-		 	System.out.println("Etat de l'entrée de la porte "+nom+" : "+e1);
+		 	System.out.println("Etat de l'entrï¿½e de la porte "+nom+" : "+e1);
 		}
 		else{
-			System.out.println("Etat de l'entrée 1 de la porte "+nom+" : "+e1);
-			System.out.println("Etat de l'entrée 2 de la porte "+nom+" : "+e2);	
+			System.out.println("Etat de l'entrï¿½e 1 de la porte "+nom+" : "+e1);
+			System.out.println("Etat de l'entrï¿½e 2 de la porte "+nom+" : "+e2);	
 		}
 		System.out.println("Etat de la sortie de la porte "+nom+" : "+s);
 	}
@@ -53,17 +53,22 @@ public class Transformateur implements Porte {
 	}
 
 	public void niveauEntree1(){
-		System.out.println("Etat de l'entrée 1 de la porte "+nom+" : "+e1);	
+		System.out.println("Etat de l'entrï¿½e 1 de la porte "+nom+" : "+e1);	
 		
 	}
 	
 	public void niveauEntree2(){
-		System.out.println("Etat de l'entrée 2 de la porte "+nom+" : "+e2);	
+		System.out.println("Etat de l'entrï¿½e 2 de la porte "+nom+" : "+e2);	
 
 	}
 	
 	public void niveauS(){
 		System.out.println("Etat de la sortie de la porte "+nom+" : "+s);
+	}
+	
+	public boolean Sortie(){
+		return s;
+		
 	}
 
 }

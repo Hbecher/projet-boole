@@ -33,4 +33,9 @@ public class Recepteur implements Porte{
 		System.out.println("Mode de la "+nom+" : "+mode);	
 		
 	}
-}
+	
+	public String Mode(){
+		return mode;
+	}
+	}
+
