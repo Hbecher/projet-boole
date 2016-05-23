@@ -13,7 +13,7 @@ public int Aff4bC2(boolean e1,boolean e2,boolean e3,boolean e4)
 	if(e4==true) i4=1; else i4=0;
 	
 	if(e1==false) res = (i4+i3+i2);
-	else res = -(9 - (i4+i3+i2));
+	else res = -(8 - (i4+i3+i2));
 	
 	return res;
 	
@@ -24,7 +24,7 @@ public void Gen4bC2(int i)
 	if(i<0) s1=true; else s1=false;
 	if (i<0)
 		i=Math.abs(i);
-		i=9-i;
+		i=8-i;
 	
 	if(i-4>=0)
 	{
