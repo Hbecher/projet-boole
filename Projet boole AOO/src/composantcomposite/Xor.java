@@ -1,7 +1,4 @@
 package composantcomposite;
-import composant.Generateur;
-import composant.Porte;
-import composant.Recepteur;
 import composant.Transformateur;
 
 public class Xor {
