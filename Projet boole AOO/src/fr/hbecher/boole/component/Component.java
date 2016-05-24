@@ -16,12 +16,12 @@ public abstract class Component
 	/**
 	 * Le type de composant.
 	 */
-	private final String type;
+	protected final String type;
 
 	/**
 	 * L'identifiant du composant dans le circuit.
 	 */
-	private final int id;
+	protected final int id;
 
 	/**
 	 * Le circuit auquel appartient le composant.
@@ -82,6 +82,16 @@ public abstract class Component
 		return circuit;
 	}
 
+	/**
+	 * Méthode convéniente récupérant l'état du premier port d'entrée du composant.
+	 *
+	 * @return l'état du premier port d'entrée
+	 */
+	public Input getInput()
+	{
+		return getInput(0);
+	}
+
 	public Input getInput(int port)
 	{
 		return inputs[port];
@@ -90,6 +100,16 @@ public abstract class Component
 	public int getNumberOfInputs()
 	{
 		return inputs.length;
+	}
+
+	/**
+	 * Méthode convéniente récupérant l'état du premier port de sortie du composant.
+	 *
+	 * @return l'état du premier port de sortie
+	 */
+	public Output getOutput()
+	{
+		return getOutput(0);
 	}
 
 	public Output getOutput(int port)
@@ -129,13 +149,18 @@ public abstract class Component
 	}
 
 	/**
-	 * Indique aux composants connectés en aval que l'état a changé et doit être mis à jour.<br />
+	 * Indique aux composants connectés en aval que l'état a changé et qu'ils doivent se mettre à jour.<br />
 	 * Transmission de l'information dans le circuit.
 	 */
-	// TODO update()
+	// TODO update() et internaliser l'état d'un composant plutôt que de recalculer toute la chaîne à chaque fois
 	public void update()
 	{
 
+	}
+
+	public boolean getState()
+	{
+		return getState(0);
 	}
 
 	/**

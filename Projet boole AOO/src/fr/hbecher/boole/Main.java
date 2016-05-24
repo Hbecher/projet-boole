@@ -1,12 +1,9 @@
 package fr.hbecher.boole;
 
 import fr.hbecher.boole.component.Circuit;
-import fr.hbecher.boole.component.Component;
-import fr.hbecher.boole.component.composite.Xor;
-import fr.hbecher.boole.component.generator.Gnd;
-import fr.hbecher.boole.component.generator.Vcc;
+import fr.hbecher.boole.component.composite.Add3b;
+import fr.hbecher.boole.component.generator.Itr;
 import fr.hbecher.boole.component.receiver.Led;
-import fr.hbecher.boole.component.transformer.Not;
 
 public class Main
 {
@@ -14,17 +11,27 @@ public class Main
 	{
 		Circuit circuit = new Circuit("Main");
 
-		Component e1 = new Gnd(circuit);
-		Component e2 = new Vcc(circuit);
+		Itr e1 = new Itr(circuit), e2 = new Itr(circuit), e3 = new Itr(circuit);
 
-		Xor xor = new Xor(circuit, e1.getOutput(0), e2.getOutput(0));
+		Add3b add3b = new Add3b(circuit, e1.getOutput(), e2.getOutput(), e3.getOutput());
 
-		Not not = new Not(circuit, xor.getOutput(0));
+		Led led1 = new Led(circuit, add3b.getOutput(0)), led2 = new Led(circuit, add3b.getOutput(1));
 
-		Led led = new Led(circuit, not.getOutput(0));
+		for(int i = 0; i < 2; i++)
+		{
+			for(int j = 0; j < 2; j++)
+			{
+				for(int k = 0; k < 2; k++)
+				{
+					System.out.println(e1.getState() + " " + e2.getState() + " " + e3.getState() + " -> " + led1.getState() + " " + led2.getState());
 
-		// xnor
-		System.out.println(led.getState(0));
-		System.out.println(circuit.isClosed());
+					e3.toggleState();
+				}
+
+				e2.toggleState();
+			}
+
+			e1.toggleState();
+		}
 	}
 }

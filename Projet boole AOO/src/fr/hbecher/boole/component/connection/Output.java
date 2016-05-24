@@ -137,6 +137,6 @@ public class Output
 	@Override
 	public int hashCode()
 	{
-		return owner.hashCode() + dests.hashCode();
+		return 31 * owner.hashCode();
 	}
 }

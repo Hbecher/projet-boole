@@ -14,6 +14,11 @@ public class Itr extends Generator
 {
 	private boolean state = false;
 
+	public Itr(Circuit circuit)
+	{
+		this(circuit, false);
+	}
+
 	public Itr(Circuit circuit, boolean initState)
 	{
 		super("Itr", circuit, 0, 1);

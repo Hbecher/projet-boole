@@ -124,6 +124,6 @@ public class Input
 	@Override
 	public int hashCode()
 	{
-		return 31 * owner.hashCode() + source.hashCode();
+		return 31 * owner.hashCode();
 	}
 }
