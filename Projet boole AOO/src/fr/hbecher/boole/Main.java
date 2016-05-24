@@ -12,7 +12,7 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		Circuit circuit = new Circuit("Bite");
+		Circuit circuit = new Circuit("Main");
 
 		Component e1 = new Gnd(circuit);
 		Component e2 = new Vcc(circuit);
@@ -23,7 +23,8 @@ public class Main
 
 		Led led = new Led(circuit, not.getOutput(0));
 
-		System.out.println(xor.getState(0));
+		// xnor
+		System.out.println(led.getState(0));
 		System.out.println(circuit.isClosed());
 	}
 }

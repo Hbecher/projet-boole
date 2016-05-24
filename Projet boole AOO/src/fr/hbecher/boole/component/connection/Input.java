@@ -2,8 +2,16 @@ package fr.hbecher.boole.component.connection;
 
 import fr.hbecher.boole.component.Component;
 
+/**
+ * Représente un port d'entrée d'un composant.
+ *
+ * @see fr.hbecher.boole.component.connection.Output
+ */
 public class Input
 {
+	/**
+	 * Valeur utilisée lorsque le port n'est pas connecté (pour ne pas mettre {@code null}).
+	 */
 	private static final Output DISCONNECTED = new Output(null, 0)
 	{
 		@Override
@@ -17,8 +25,19 @@ public class Input
 		}
 	};
 
+	/**
+	 * Le composant auquel appartient le port.
+	 */
 	private final Component owner;
+
+	/**
+	 * Le numéro du port.
+	 */
 	private final int port;
+
+	/**
+	 * Le port de sortie du composant connecté.
+	 */
 	private Output source = DISCONNECTED;
 
 	public Input(Component owner, int port)
@@ -52,6 +71,11 @@ public class Input
 		return source != DISCONNECTED;
 	}
 
+	/**
+	 * Connecte le port au port de sortie {@code output}.
+	 *
+	 * @param output le port de sortie
+	 */
 	public void connect(Output output)
 	{
 		if(!output.equals(source))
@@ -64,6 +88,10 @@ public class Input
 		}
 	}
 
+	/**
+	 * Déonnecte le port de sortie.<br />
+	 * (Aucun port spécifié car une entrée n'admet au plus qu'une connexion)
+	 */
 	public void disconnect()
 	{
 		if(isConnected())

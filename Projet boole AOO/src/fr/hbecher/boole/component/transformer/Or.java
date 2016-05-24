@@ -4,6 +4,12 @@ import fr.hbecher.boole.component.Circuit;
 import fr.hbecher.boole.component.Transformer;
 import fr.hbecher.boole.component.connection.Output;
 
+/**
+ * Représente un "ou" logique.
+ *
+ * @see fr.hbecher.boole.component.Component
+ * @see fr.hbecher.boole.component.Transformer
+ */
 public class Or extends Transformer
 {
 	public Or(Circuit circuit, Output out1, Output out2)

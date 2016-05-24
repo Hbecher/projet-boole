@@ -4,6 +4,12 @@ import fr.hbecher.boole.component.Circuit;
 import fr.hbecher.boole.component.Transformer;
 import fr.hbecher.boole.component.connection.Output;
 
+/**
+ * Représente un "non" logique.
+ *
+ * @see fr.hbecher.boole.component.Component
+ * @see fr.hbecher.boole.component.Transformer
+ */
 public class Not extends Transformer
 {
 	public Not(Circuit circuit, Output out)

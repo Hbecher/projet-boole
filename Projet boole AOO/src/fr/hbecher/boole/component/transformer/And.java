@@ -2,9 +2,14 @@ package fr.hbecher.boole.component.transformer;
 
 import fr.hbecher.boole.component.Circuit;
 import fr.hbecher.boole.component.Transformer;
-import fr.hbecher.boole.component.connection.Input;
 import fr.hbecher.boole.component.connection.Output;
 
+/**
+ * Représente un "et" logique.
+ *
+ * @see fr.hbecher.boole.component.Component
+ * @see fr.hbecher.boole.component.Transformer
+ */
 public class And extends Transformer
 {
 	public And(Circuit circuit, Output out1, Output out2)

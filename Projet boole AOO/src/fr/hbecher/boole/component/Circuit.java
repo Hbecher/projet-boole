@@ -1,9 +1,16 @@
 package fr.hbecher.boole.component;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
+/**
+ * Représente un circuit logique.<br />
+ * Un circuit contient plusieurs composants, dont un identifiant unique est attribué à leur création dans le circuit.
+ * Un circuit peut être ouvert (ports de libre) ou fermé (tous les ports sont connectés à un composant du circuit).
+ *
+ * @see fr.hbecher.boole.component.Component
+ * @see fr.hbecher.boole.component.Composite
+ */
 public class Circuit
 {
 	private final List<Component> components = new ArrayList<Component>();
@@ -15,6 +22,12 @@ public class Circuit
 		this.name = name;
 	}
 
+	/**
+	 * Ajoute un composant dans le circuit et renvoie son identifiant interne.
+	 *
+	 * @param component le composant
+	 * @return L'identifiant attribué
+	 */
 	public int addComponent(Component component)
 	{
 		components.add(component);
@@ -22,11 +35,21 @@ public class Circuit
 		return nextId++;
 	}
 
+	/**
+	 * Retire le composant du circuit, s'il est dans le circuit.
+	 *
+	 * @param component le composant
+	 */
 	public void removeComponent(Component component)
 	{
 		components.remove(component);
 	}
 
+	/**
+	 * Indique si le circuit est ouvert ou fermé.
+	 *
+	 * @return Le type du circuit
+	 */
 	public boolean isClosed()
 	{
 		for(Component component : components)

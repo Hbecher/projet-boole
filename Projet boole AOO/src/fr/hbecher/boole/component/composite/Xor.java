@@ -7,8 +7,18 @@ import fr.hbecher.boole.component.transformer.And;
 import fr.hbecher.boole.component.transformer.Not;
 import fr.hbecher.boole.component.transformer.Or;
 
+/**
+ * Représente le "ou exclusif" logique.<br />
+ * C'est un composite : il s'exprime en fonction de deux "et", de deux "non" et d'un "ou".
+ *
+ * @see fr.hbecher.boole.component.Component
+ * @see fr.hbecher.boole.component.Composite
+ */
 public class Xor extends Composite
 {
+	/**
+	 * Le composant qui contient le résultat de la fonction logique, en l'occurrence un "ou".
+	 */
 	private final Or xor;
 
 	public Xor(Circuit circuit, Output out1, Output out2)
