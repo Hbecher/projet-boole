@@ -72,6 +72,14 @@ public class Input
 	}
 
 	/**
+	 * Met à jour l'état des composants en aval.
+	 */
+	public void update()
+	{
+		owner.update();
+	}
+
+	/**
 	 * Connecte le port au port de sortie {@code output}.
 	 *
 	 * @param output le port de sortie

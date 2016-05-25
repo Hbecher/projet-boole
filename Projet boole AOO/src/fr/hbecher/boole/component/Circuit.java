@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Circuit
 {
-	private final List<Component> components = new ArrayList<Component>();
+	private final List<Component> components = new ArrayList<>();
 	private final String name;
 	private int nextId = 0;
 
@@ -46,6 +46,14 @@ public class Circuit
 	}
 
 	/**
+	 * Exécute le circuit.
+	 */
+	public void run()
+	{
+		components.stream().filter(component -> component instanceof Generator).forEachOrdered(Component::update);
+	}
+
+	/**
 	 * Indique si le circuit est ouvert ou fermé.
 	 *
 	 * @return Le type du circuit
@@ -54,7 +62,7 @@ public class Circuit
 	{
 		for(Component component : components)
 		{
-			if(!component.isClosed())
+			if(!component.isAllConnected())
 			{
 				return false;
 			}

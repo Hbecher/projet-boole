@@ -22,6 +22,6 @@ public class Led extends Receiver
 	@Override
 	public boolean getState(int port)
 	{
-		return getInput(0).getState();
+		return port == 0 && getInput().getState();
 	}
 }

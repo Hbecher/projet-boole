@@ -12,6 +12,8 @@ package fr.hbecher.boole.component;
 public abstract class Transformer extends Component
 {
 	/**
+	 * Constructeur d'un transformateur.
+	 *
 	 * @see fr.hbecher.boole.component.Component#Component(String, Circuit, int, int)
 	 */
 	public Transformer(String type, Circuit circuit, int inPorts, int outPorts)

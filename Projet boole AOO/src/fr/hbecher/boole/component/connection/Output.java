@@ -1,7 +1,6 @@
 package fr.hbecher.boole.component.connection;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import fr.hbecher.boole.component.Component;
@@ -24,9 +23,15 @@ public class Output
 	private final int port;
 
 	/**
-	 * La liste des ports d'entrée des composants connectés.<br />
+	 * L'état du port.
 	 */
-	private final List<Input> dests = new ArrayList<Input>();
+	private boolean state = false;
+
+	/**
+	 * La liste des ports d'entrée des composants connectés.<br />
+	 * Si la liste est vide, alors le port de sortie est déconnecté.
+	 */
+	private final List<Input> dests = new ArrayList<>();
 
 	public Output(Component owner, int port)
 	{
@@ -45,13 +50,13 @@ public class Output
 	}
 
 	/**
-	 * Retourne un aperçu des ports d'entrée connectés sous forme de liste non modifiable.
+	 * Retourne les ports d'entrée connectés.
 	 *
 	 * @return les ports d'entrée connectés
 	 */
-	public List<Input> getDests()
+	public Input[] getDests()
 	{
-		return Collections.unmodifiableList(dests);
+		return dests.toArray(new Input[0]);
 	}
 
 	/**
@@ -61,7 +66,7 @@ public class Output
 	 */
 	public boolean getState()
 	{
-		return owner.getState(port);
+		return state;
 	}
 
 	/**
@@ -83,6 +88,16 @@ public class Output
 	public boolean isConnected()
 	{
 		return dests.size() > 0;
+	}
+
+	/**
+	 * Met à jour l'état des composants en aval.
+	 */
+	public void update()
+	{
+		state = owner.getState(port);
+
+		dests.forEach(Input::update);
 	}
 
 	/**

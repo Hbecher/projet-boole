@@ -28,22 +28,6 @@ public class Add3b extends Composite
 	@Override
 	public boolean getState(int port)
 	{
-		switch(port)
-		{
-			case 0:
-			{
-				return c1.getState();
-			}
-
-			case 1:
-			{
-				return c2.getState();
-			}
-
-			default:
-			{
-				return false;
-			}
-		}
+		return port == 0 ? c1.getState() : port == 1 && c2.getState();
 	}
 }

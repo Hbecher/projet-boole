@@ -23,6 +23,6 @@ public class Or extends Transformer
 	@Override
 	public boolean getState(int port)
 	{
-		return getInput(0).getState() || getInput(1).getState();
+		return port == 0 && (getInput(0).getState() || getInput(1).getState());
 	}
 }

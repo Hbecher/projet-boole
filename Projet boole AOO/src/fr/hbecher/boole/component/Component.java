@@ -1,5 +1,7 @@
 package fr.hbecher.boole.component;
 
+import java.util.Arrays;
+
 import fr.hbecher.boole.component.connection.Input;
 import fr.hbecher.boole.component.connection.Output;
 
@@ -8,6 +10,9 @@ import fr.hbecher.boole.component.connection.Output;
  * Un composant peut être élémentaire (générateur, récepteur ou transformateur) ou composite (constitué de plusieurs composants ou composites)<br />
  * Chaque composant dispose de plusieurs ports d'entrée et de sortie, ceux-ci pouvant être connectés à d'autres composants.
  *
+ * @see fr.hbecher.boole.component.Generator
+ * @see fr.hbecher.boole.component.Receiver
+ * @see fr.hbecher.boole.component.Transformer
  * @see fr.hbecher.boole.component.Composite
  * @see fr.hbecher.boole.component.Circuit
  */
@@ -16,12 +21,12 @@ public abstract class Component
 	/**
 	 * Le type de composant.
 	 */
-	protected final String type;
+	private final String type;
 
 	/**
 	 * L'identifiant du composant dans le circuit.
 	 */
-	protected final int id;
+	private final int id;
 
 	/**
 	 * Le circuit auquel appartient le composant.
@@ -31,12 +36,12 @@ public abstract class Component
 	/**
 	 * Les ports d'entrée.
 	 */
-	protected final Input[] inputs;
+	private final Input[] inputs;
 
 	/**
 	 * Les ports de sortie.
 	 */
-	protected final Output[] outputs;
+	private final Output[] outputs;
 
 	/**
 	 * Le constructeur d'un composant.
@@ -50,19 +55,11 @@ public abstract class Component
 	{
 		this.type = type;
 		this.circuit = circuit;
-
 		inputs = new Input[inPorts];
 		outputs = new Output[outPorts];
 
-		for(int i = 0; i < inPorts; i++)
-		{
-			inputs[i] = new Input(this, i);
-		}
-
-		for(int i = 0; i < outPorts; i++)
-		{
-			outputs[i] = new Output(this, i);
-		}
+		Arrays.setAll(inputs, value -> new Input(this, value));
+		Arrays.setAll(outputs, value -> new Output(this, value));
 
 		id = circuit.addComponent(this);
 	}
@@ -127,7 +124,7 @@ public abstract class Component
 	 *
 	 * @return {@code true} si tous les ports du composant sont connectés
 	 */
-	public boolean isClosed()
+	public boolean isAllConnected()
 	{
 		for(Input input : inputs)
 		{
@@ -152,10 +149,12 @@ public abstract class Component
 	 * Indique aux composants connectés en aval que l'état a changé et qu'ils doivent se mettre à jour.<br />
 	 * Transmission de l'information dans le circuit.
 	 */
-	// TODO update() et internaliser l'état d'un composant plutôt que de recalculer toute la chaîne à chaque fois
 	public void update()
 	{
-
+		for(Output output : outputs)
+		{
+			output.update();
+		}
 	}
 
 	public boolean getState()

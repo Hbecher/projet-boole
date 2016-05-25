@@ -19,6 +19,6 @@ public class Vcc extends Generator
 	@Override
 	public boolean getState(int port)
 	{
-		return true;
+		return port == 0;
 	}
 }

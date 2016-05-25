@@ -11,6 +11,8 @@ package fr.hbecher.boole.component;
 public abstract class Generator extends Component
 {
 	/**
+	 * Constructeur d'un générateur.
+	 *
 	 * @see fr.hbecher.boole.component.Component#Component(String, Circuit, int, int)
 	 */
 	public Generator(String type, Circuit circuit, int inPorts, int outPorts)
